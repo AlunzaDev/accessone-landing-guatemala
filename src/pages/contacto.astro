@@ -1,16 +1,17 @@
 ---
 import InteriorLayout from '../layouts/InteriorLayout.astro';
 import ContactForm from '../components/ContactForm';
+import Icon from '../components/Icon';
 ---
 <InteriorLayout title="Contacto | AccessOne Guatemala" description="Conversemos sobre la operación, tecnología y mantenimiento de tu parqueo en Guatemala.">
   <section class="page-hero contact-hero"><p class="tag">Contacto</p><h1>Tu siguiente proyecto empieza aquí.</h1><p>Conversemos sobre cómo mejorar la operación y experiencia de tu parqueo en Guatemala.</p></section>
   <section class="contact-directory" aria-labelledby="contact-directory-title">
     <div class="directory-heading"><p class="tag">AccessOne Guatemala</p><h2 id="contact-directory-title">Estamos para apoyarte.</h2><p>Los siguientes datos son provisionales y se reemplazarán al integrar al equipo responsable en Guatemala.</p></div>
     <div class="directory-grid">
-      <article><span aria-hidden="true">@</span><p>Correo electrónico</p><a href="mailto:contacto.gt@ejemplo.com">contacto.gt@ejemplo.com</a><small>Dato de ejemplo</small></article>
-      <article><span aria-hidden="true">☎</span><p>Teléfono</p><a href="tel:+50200000000">+502 0000 0000</a><small>Dato de ejemplo</small></article>
-      <article><span aria-hidden="true">⌖</span><p>Ubicación</p><strong>Ciudad de Guatemala</strong><small>Dirección por confirmar</small></article>
-      <article><span aria-hidden="true">◷</span><p>Horario de atención</p><strong>Lunes a viernes · 8:00 a 17:00</strong><small>Horario por confirmar</small></article>
+      <article><span aria-hidden="true"><Icon name="mail" className="contact-icon" /></span><p>Correo electrónico</p><a href="mailto:contacto.gt@ejemplo.com">contacto.gt@ejemplo.com</a><small>Dato de ejemplo</small></article>
+      <article><span aria-hidden="true"><Icon name="phone" className="contact-icon" /></span><p>Teléfono</p><a href="tel:+50200000000">+502 0000 0000</a><small>Dato de ejemplo</small></article>
+      <article><span aria-hidden="true"><Icon name="location" className="contact-icon" /></span><p>Ubicación</p><strong>Ciudad de Guatemala</strong><small>Dirección por confirmar</small></article>
+      <article><span aria-hidden="true"><Icon name="clock" className="contact-icon" /></span><p>Horario de atención</p><strong>Lunes a viernes · 8:00 a 17:00</strong><small>Horario por confirmar</small></article>
     </div>
   </section>
   <section class="contact-form-section"><ContactForm client:load /></section>
