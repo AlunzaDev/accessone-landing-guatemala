@@ -1,5 +1,3 @@
-import BrandLogo from './BrandLogo';
-
 export default function Footer() {
-  return <footer><a className="brand" href="/"><BrandLogo background="dark" /></a><p>AccessOne Parking Guatemala</p><span>© {new Date().getFullYear()}</span></footer>;
+  return <footer><a className="brand" href="/"><img src="/Recurso 15@4x.png" alt="AccessOne Parking Guatemala" /></a><p>AccessOne Parking Guatemala</p><span>© {new Date().getFullYear()}</span></footer>;
 }
