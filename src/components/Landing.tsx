@@ -1,24 +1,47 @@
-import { useState } from 'react';
+import Header from './Header';
+import Footer from './Footer';
 import './landing.css';
 
-const services = [
-  ['Control de accesos', 'Tecnología y operación coordinadas para entradas y salidas más ágiles.'],
-  ['Diseño y equipamiento', 'Proyectamos obra civil, instalaciones y equipos según las necesidades del sitio.'],
-  ['Operación y mantenimiento', 'Procesos claros y cuidado continuo para una operación confiable.'],
-  ['Servicios complementarios', 'Valet parking, limpieza, vigilancia, apoyo vial y atención al visitante.'],
+const mexicoMetrics = [
+  ['+35', 'años de experiencia'],
+  ['+30,000', 'espacios de estacionamiento'],
+  ['+300', 'carriles operados'],
+  ['+300', 'colaboradores calificados'],
+  ['+35 M', 'de usuarios atendidos al año'],
+  ['+40', 'proyectos en operación'],
+];
+
+const homeServices = [
+  ['01', 'Control de accesos', 'Tecnología y procesos para ordenar el ingreso y salida de vehículos.'],
+  ['02', 'Operación de parqueos', 'Administración profesional enfocada en eficiencia, seguridad y servicio.'],
+  ['03', 'Valet parking', 'Recepción y entrega de vehículos con personal capacitado y control operativo.'],
+  ['04', 'Mantenimiento', 'Programas preventivos y correctivos para conservar cada espacio en buen estado.'],
+  ['05', 'Servicios al usuario', 'Limpieza, asistencia básica, apoyo vial y atención dentro del parqueo.'],
+  ['06', 'Diseño y equipamiento', 'Conceptualización, obra e integración de equipos de control de acceso.'],
 ];
 
 export default function Landing() {
-  const [open, setOpen] = useState(false);
   return <div className="shell">
-    <header><a className="brand" href="#inicio" aria-label="AccessOne Parking Guatemala, inicio"><img src="/guatemala@4x-100.jpg" alt="AccessOne Parking Guatemala" /></a><button className="menu" onClick={() => setOpen(!open)} aria-expanded={open}>{open ? 'Cerrar' : 'Menú'}</button><nav className={open ? 'open' : ''}><a href="#soluciones">Soluciones</a><a href="#proceso">Proceso</a><a href="#contacto">Contacto</a></nav><a className="top-cta" href="#contacto">Solicitar diagnóstico <b>↗</b></a></header>
+    <section className="scene-zero" id="inicio" aria-labelledby="scene-zero-title">
+      <div className="scene-zero-copy"><p>AccessOne Parking Guatemala</p><h1 id="scene-zero-title">Diseño, mantenimiento y operación de Estacionamientos</h1></div>
+      <a className="scene-zero-scroll" href="#experiencia" aria-label="Continuar a la siguiente sección">Descubre más <span>↓</span></a>
+    </section>
+    <Header revealAfterScene />
     <main>
-      <section className="hero" id="inicio"><div className="grid-bg"></div><div className="hero-copy"><p className="tag"><span></span> Infraestructura para una ciudad en movimiento</p><h1>Accesos que<br/>piensan <em>un paso<br/>adelante.</em></h1><p>Diseñamos, equipamos y operamos estacionamientos con una visión clara: convertir cada acceso en una experiencia eficiente.</p><div className="actions"><a href="#contacto">Transformar mi operación <b>→</b></a><a href="#soluciones">Conocer soluciones</a></div></div><div className="dashboard" aria-label="Visualización conceptual de una operación de estacionamiento"><div className="dash-head"><span>OPERACIÓN EN MOVIMIENTO</span><i>● EN LÍNEA</i></div><div className="map"><span className="lane l1"></span><span className="lane l2"></span><span className="lane l3"></span><b className="node n1">01</b><b className="node n2">02</b><b className="node n3">03</b><div className="pulse"></div></div><div className="dash-foot"><span><small>FLUJO</small>Coordinado</span><span><small>ACCESOS</small>Conectados</span><span><small>ESTADO</small>Operativo</span></div></div></section>
-      <section className="intro"><p className="tag">Una mejor primera impresión</p><h2>El estacionamiento no es el final del trayecto.<br/><em>Es el inicio de la experiencia.</em></h2><p>Integramos estrategia, infraestructura y atención para que cada espacio funcione con orden y proyecte confianza.</p></section>
-      <section className="solutions" id="soluciones"><div className="section-title"><p className="tag"><span></span> Soluciones integrales</p><h2>Una operación.<br/><em>Todos los frentes.</em></h2></div><div className="cards">{services.map(([title,text],i) => <article key={title}><span>0{i+1}</span><div className="icon">{['↔','◇','◌','+'][i]}</div><h3>{title}</h3><p>{text}</p><b>Explorar <i>↗</i></b></article>)}</div></section>
-      <section className="process" id="proceso"><div className="process-art"><div className="rings"><span></span><span></span><span></span><b>A1</b></div><p>SISTEMA ACCESSONE<br/>SOLUCIÓN A LA MEDIDA</p></div><div className="process-copy"><p className="tag">Del plano a la operación</p><h2>Una metodología<br/><em>conectada.</em></h2><ol>{[['Analizamos','Flujos, necesidades y oportunidades del espacio.'],['Diseñamos','La solución operativa, técnica y arquitectónica.'],['Implementamos','Equipos, imagen, procesos y puesta en marcha.'],['Optimizamos','Seguimiento y mejora continua de la experiencia.']].map(([title,text],i)=><li key={title}><span>0{i+1}</span><div><b>{title}</b><p>{text}</p></div></li>)}</ol></div></section>
-      <section className="contact" id="contacto"><p className="tag">Conectemos</p><h2>Tu siguiente acceso<br/>empieza <em>aquí.</em></h2><p>Cuéntanos sobre tu proyecto en Guatemala. Incorporaremos los datos de contacto oficiales antes del lanzamiento.</p><a href="mailto:contacto@example.com">Solicitar diagnóstico <b>↗</b></a></section>
+      <section className="home-proof" id="experiencia" aria-labelledby="home-proof-title">
+        <div className="home-proof-heading"><div><p className="tag">Trayectoria construida en México</p><h2 id="home-proof-title">Experiencia que ahora ponemos al servicio de Guatemala.</h2></div><p>Estas cifras corresponden a la operación y experiencia desarrollada por AccessOne en México. Son el respaldo con el que iniciamos esta nueva etapa para atender proyectos guatemaltecos.</p></div>
+        <div className="home-metrics">{mexicoMetrics.map(([value,label]) => <article key={label}><strong>{value}</strong><span>{label}</span><small>México</small></article>)}</div>
+      </section>
+      <section className="home-offer">
+        <div className="home-offer-copy"><p className="tag">¿Qué ofrecemos?</p><h2>De la idea a una operación que funciona.</h2><p>Acompañamos cada proyecto desde la asesoría y conceptualización hasta la construcción, instalación y operación del parqueo.</p><a href="/nosotros">Conoce AccessOne <b>↗</b></a></div>
+        <div className="home-offer-list"><article><span>01</span><div><h3>Planeación y diseño</h3><p>Proyecto arquitectónico, obra civil, instalaciones eléctricas, red y voz.</p></div></article><article><span>02</span><div><h3>Tecnología y ejecución</h3><p>Equipos de control, implementación, estandarización de procesos y puesta en marcha.</p></div></article><article><span>03</span><div><h3>Operación y mejora</h3><p>Administración profesional orientada a la seguridad, imagen, ahorro y rentabilidad.</p></div></article></div>
+      </section>
+      <section className="home-services" aria-labelledby="home-services-title">
+        <div className="home-section-heading"><p className="tag">Servicios en Guatemala</p><h2 id="home-services-title">Soluciones para cada punto de la experiencia.</h2><a href="/servicios">Ver todos los servicios <b>→</b></a></div>
+        <div className="home-service-grid">{homeServices.map(([number,title,text]) => <a href="/servicios" key={title}><span>{number}</span><h3>{title}</h3><p>{text}</p><b aria-hidden="true">↗</b></a>)}</div>
+      </section>
+      <section className="home-cta"><p className="tag">AccessOne Guatemala</p><h2>Convirtamos cada acceso en una mejor experiencia.</h2><p>Conversemos sobre las necesidades de tu parqueo y construyamos una solución a la medida.</p><a href="/contacto">Hablemos de tu proyecto <b>↗</b></a></section>
     </main>
-    <footer><a className="brand" href="#inicio"><img src="/guatemala@4x-100.jpg" alt="AccessOne Parking Guatemala" /></a><p>Propuesta de landing · Datos de contacto provisionales</p><span>© {new Date().getFullYear()}</span></footer>
+    <Footer />
   </div>;
 }
