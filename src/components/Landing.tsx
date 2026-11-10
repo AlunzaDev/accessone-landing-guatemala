@@ -38,7 +38,7 @@ export default function Landing() {
         <div className="home-offer-list"><article><span>01</span><div><h3>Planeación y diseño</h3><p>Proyecto arquitectónico, obra civil, instalaciones eléctricas, red y voz.</p></div></article><article><span>02</span><div><h3>Tecnología y ejecución</h3><p>Equipos de control, implementación, estandarización de procesos y puesta en marcha.</p></div></article><article><span>03</span><div><h3>Operación y mejora</h3><p>Administración profesional orientada a la seguridad, imagen, ahorro y rentabilidad.</p></div></article></div>
       </section>
       <section className="home-services" aria-labelledby="home-services-title">
-        <div className="home-section-heading"><p className="tag">Servicios en Guatemala</p><h2 id="home-services-title">Soluciones para cada punto de la experiencia.</h2><a href="/servicios">Ver todos los servicios <b>→</b></a></div>
+        <div className="home-section-heading"><div><p className="tag">Servicios en Guatemala</p><h2 id="home-services-title">Soluciones para cada punto de la experiencia.</h2></div><a href="/servicios">Ver todos los servicios <b>→</b></a></div>
         <div className="home-service-grid">{homeServices.map(([number,icon,title,text]) => <a href="/servicios" key={title}><span>{number}</span><Icon name={icon} className="home-service-icon" /><h3>{title}</h3><p>{text}</p><b aria-hidden="true">↗</b></a>)}</div>
       </section>
       <section className="home-cta"><p className="tag">AccessOne Guatemala</p><h2>Convirtamos cada acceso en una mejor experiencia.</h2><p>Conversemos sobre las necesidades de tu parqueo y construyamos una solución a la medida.</p><a href="/contacto">Hablemos de tu proyecto <b>↗</b></a></section>
