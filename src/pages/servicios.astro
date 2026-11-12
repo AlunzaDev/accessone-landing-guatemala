@@ -2,10 +2,12 @@
 import InteriorLayout from '../layouts/InteriorLayout.astro';
 import {
   CountUp,
+  MediaGallery,
   ServiceCatalog,
   type IconName,
 } from '@alunzadev/accessone-ui';
 import '@alunzadev/accessone-ui/styles/service-catalog.css';
+import '@alunzadev/accessone-ui/styles/media.css';
 const services: { icon: IconName; title: string; text: string; items?: string[] }[] = [
   { icon: 'access', title: 'Control de accesos y salidas', text: 'Sistemas para gestionar el ingreso y egreso de vehículos con tecnología de vanguardia, aprovechando mejor cada ubicación y manteniendo el control de las áreas de circulación.' },
   { icon: 'maintenance', title: 'Mantenimiento', text: 'Programas preventivos y correctivos para mantener cada parqueo en condiciones óptimas.', items: ['Bordillos y señalización', 'Demarcación y pintura', 'Bacheo preventivo', 'Cambio de luminarias'] },
@@ -21,5 +23,16 @@ const services: { icon: IconName; title: string; text: string; items?: string[] 
   <section class="page-hero"><p class="tag">Servicios</p><h1>Una operación. Todos los frentes.</h1><p>Soluciones conectadas para diseñar, equipar, operar y mantener parqueos en Guatemala.</p></section>
   <section class="services-intro"><p class="tag">Experiencia integral</p><h2>Todo lo que un parqueo necesita para operar mejor.</h2><p>Integramos infraestructura, tecnología y atención para crear soluciones confiables, adaptables y centradas en la experiencia de cada usuario.</p></section>
   <section class="solutions services-catalog"><ServiceCatalog client:load services={services.map(({ text, ...service }) => ({ ...service, description: text }))} /></section>
+  <!-- TODO media: fotos de servicios -->
+  <section class="accessone-media-section" aria-labelledby="services-gallery-title">
+    <div class="accessone-media-section__heading"><div><p class="tag">En campo</p><h2 id="services-gallery-title">Nuestros servicios, en acción.</h2></div></div>
+    <MediaGallery items={[
+      { label: 'Operación de estacionamiento', hint: 'Foto amplia' },
+      { label: 'Autolavado' },
+      { label: 'Limpieza' },
+      { label: 'Asistencia al usuario' },
+      { label: 'Taquillas y torniquetes' },
+    ]} />
+  </section>
   <section class="service-proof"><p class="tag">Trayectoria construida en México</p><strong><CountUp client:load value={30000} prefix="+" /></strong><h2>espacios de estacionamiento</h2><p>Experiencia desarrollada en México en estacionamientos, hospitales, clubes deportivos, exposiciones y centros comerciales; conocimiento que ahora ponemos al servicio de proyectos en Guatemala.</p><a href="/contacto">Conversemos sobre tu proyecto <b>↗</b></a></section>
 </InteriorLayout>
