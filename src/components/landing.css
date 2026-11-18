@@ -19,10 +19,10 @@
 @media(max-width:900px){.accessone-real-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.accessone-real-gallery{grid-template-columns:1fr}.accessone-real-gallery figure:first-child{grid-column:auto;grid-row:auto}}
 
-/* Encabezados de Servicios y Contacto: título en la columna derecha */
-.services-intro{grid-template-columns:.8fr 1.3fr;gap:7vw;align-items:normal;padding:95px 7vw}
-.services-intro h2{grid-column:2;max-width:none;margin:0;font:600 clamp(38px,5vw,66px)/1.05 'Manrope';letter-spacing:-.045em;text-wrap:wrap}
-.services-intro>p:last-child{grid-column:2;margin:22px 0 0;max-width:680px;color:var(--accessone-color-text-soft);line-height:1.7}
+/* Introducción de servicios compacta, sin columnas vacías */
+.services-intro{grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:clamp(32px,5vw,78px);align-items:center;padding:clamp(58px,6vw,82px) 7vw}
+.services-intro h2{max-width:760px;margin:14px 0 0;font:600 clamp(38px,4.7vw,62px)/1.03 'Manrope';letter-spacing:-.048em;text-wrap:balance}
+.services-intro-copy{padding-bottom:0}
 .directory-heading{grid-template-columns:.75fr 1.35fr;gap:5vw;align-items:start;margin-bottom:55px}
 .directory-heading h2{grid-column:2;max-width:none;margin:0;font:600 clamp(40px,5vw,68px)/1 'Manrope';letter-spacing:-.05em;text-wrap:wrap}
 .directory-heading>p:last-child{grid-column:2;max-width:650px;margin:18px 0 0;color:var(--accessone-color-text-soft);line-height:1.7}
@@ -32,11 +32,12 @@
   .directory-heading h2{margin-top:16px}
 }
 @media(max-width:780px){
-  .services-intro{padding-top:70px;padding-bottom:70px}
+  .services-intro{display:block;padding-top:54px;padding-bottom:54px}
   .services-intro h2{margin-top:18px}
+  .services-intro-copy{margin-top:26px}
 }
 @media(max-width:680px){
-  .services-intro{padding-top:68px;padding-bottom:68px}
+  .services-intro{padding-top:48px;padding-bottom:48px}
 }
 @media(max-width:420px){
   .services-intro h2,.directory-heading h2{font-size:clamp(34px,10.5vw,46px)}
