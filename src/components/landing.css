@@ -1,6 +1,12 @@
 /* Ajustes locales de AccessOne Guatemala.
  * La base vive en @alunzadev/accessone-ui/styles/landing.css; aquí solo van diferencias de este país. */
 
+/* Header solid-glass: flota sobre el contenido para que el blur sea visible. */
+.shell>header{position:fixed;top:0;left:0;right:0;background:linear-gradient(135deg,rgba(46,49,92,.88),rgba(32,35,74,.72));backdrop-filter:blur(20px) saturate(155%);-webkit-backdrop-filter:blur(20px) saturate(155%);border-bottom:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 12px 34px rgba(19,21,48,.22)}
+.shell>header.home-header{opacity:0;transform:translateY(-100%);pointer-events:none}
+.shell>header.home-header.is-visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.shell>header.home-header.is-docked{background:linear-gradient(135deg,rgba(46,49,92,.9),rgba(32,35,74,.78))}
+
 .scene-zero{background-image:linear-gradient(0deg,rgba(6,27,54,.58),rgba(6,27,54,.12) 58%),url('/accessone-guatemala-hero.webp');background-size:cover;background-position:center 58%;background-repeat:no-repeat;background-color:#101b3b}
 .scene-zero-brand{position:absolute;z-index:1;top:52%;left:50%;width:min(48vw,820px);height:auto;transform:translate(-50%,-50%);filter:drop-shadow(0 8px 28px rgba(0,0,0,.2))}
 .scene-zero-copy,.scene-zero-scroll{z-index:2}
@@ -32,10 +38,11 @@
 .person-card{display:flex;min-width:0;flex-direction:column;overflow:hidden;border:1px solid #dfe1e9;border-radius:22px;background:linear-gradient(145deg,#fff 0%,#fbfbfd 100%);box-shadow:0 16px 45px rgba(32,35,74,.06);transition:transform .25s ease,box-shadow .25s ease}
 .person-card:hover{transform:translateY(-4px);box-shadow:0 22px 55px rgba(32,35,74,.11)}
 .person-card-heading{display:flex;gap:20px;align-items:flex-start;padding:clamp(26px,3vw,38px);border-bottom:1px solid #e7e8ef}
+.person-card-heading>div{min-width:0}
 .person-icon{width:58px;height:58px;display:grid;flex:0 0 58px;place-items:center;border-radius:18px;background:var(--accessone-color-yellow-soft);color:var(--accessone-color-navy)}
 .person-icon .contact-icon{width:25px;height:25px}
 .person-card-heading p{margin:2px 0 8px;color:#737692;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
-.person-card-heading h3{margin:0;color:var(--accessone-color-navy);font:600 clamp(20px,2vw,27px)/1.2 'Manrope';letter-spacing:-.025em}
+.person-card-heading h3{margin:0;color:var(--accessone-color-navy);font:600 clamp(20px,2vw,27px)/1.2 'Manrope';letter-spacing:-.025em;overflow-wrap:anywhere}
 .person-card-heading small{display:block;margin-top:9px;color:#737692;font-size:12px}
 .person-contact-list{display:grid;align-content:start;padding:12px clamp(18px,2.4vw,30px) 18px}
 .person-contact-list>a{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:center;padding:17px 8px;color:var(--accessone-color-navy);font:600 15px/1.4 'Manrope';text-decoration:none;border-bottom:1px solid #ececf2;overflow-wrap:anywhere;transition:color .2s ease,transform .2s ease}
