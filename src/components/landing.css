@@ -28,6 +28,22 @@
 .directory-heading{grid-template-columns:.75fr 1.35fr;gap:5vw;align-items:start;margin-bottom:55px}
 .directory-heading h2{grid-column:2;max-width:none;margin:0;font:600 clamp(40px,5vw,68px)/1 'Manrope';letter-spacing:-.05em;text-wrap:wrap}
 .directory-heading>p:last-child{grid-column:2;max-width:650px;margin:18px 0 0;color:var(--accessone-color-text-soft);line-height:1.7}
+.contact-people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2vw,30px);align-items:start}
+.person-card{display:flex;min-width:0;flex-direction:column;overflow:hidden;border:1px solid #dfe1e9;border-radius:22px;background:linear-gradient(145deg,#fff 0%,#fbfbfd 100%);box-shadow:0 16px 45px rgba(32,35,74,.06);transition:transform .25s ease,box-shadow .25s ease}
+.person-card:hover{transform:translateY(-4px);box-shadow:0 22px 55px rgba(32,35,74,.11)}
+.person-card-heading{display:flex;gap:20px;align-items:flex-start;padding:clamp(26px,3vw,38px);border-bottom:1px solid #e7e8ef}
+.person-icon{width:58px;height:58px;display:grid;flex:0 0 58px;place-items:center;border-radius:18px;background:var(--accessone-color-yellow-soft);color:var(--accessone-color-navy)}
+.person-icon .contact-icon{width:25px;height:25px}
+.person-card-heading p{margin:2px 0 8px;color:#737692;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+.person-card-heading h3{margin:0;color:var(--accessone-color-navy);font:600 clamp(20px,2vw,27px)/1.2 'Manrope';letter-spacing:-.025em}
+.person-card-heading small{display:block;margin-top:9px;color:#737692;font-size:12px}
+.person-contact-list{display:grid;align-content:start;padding:12px clamp(18px,2.4vw,30px) 18px}
+.person-contact-list>a{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:center;padding:17px 8px;color:var(--accessone-color-navy);font:600 15px/1.4 'Manrope';text-decoration:none;border-bottom:1px solid #ececf2;overflow-wrap:anywhere;transition:color .2s ease,transform .2s ease}
+.person-contact-list>a:last-child{border-bottom:0}
+.person-contact-list>a:hover{color:#545886;transform:translateX(3px)}
+.person-contact-list>a>span:first-child{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:#f2f2f7;color:var(--accessone-color-navy)}
+.person-contact-list .contact-icon{width:20px;height:20px}
+.person-contact-list small{display:block;margin-bottom:3px;color:#85879c;font:700 10px/1.2 'Inter';letter-spacing:.1em;text-transform:uppercase}
 @media(max-width:900px){
   .services-intro{padding-left:6vw;padding-right:6vw}
   .directory-heading{margin-bottom:36px}
@@ -38,11 +54,18 @@
   .services-intro h2{margin-top:18px}
   .services-intro-copy{margin-top:26px}
 }
+@media(max-width:760px){
+  .contact-people{grid-template-columns:1fr}
+}
 @media(max-width:680px){
   .services-intro{padding-top:48px;padding-bottom:48px}
 }
 @media(max-width:420px){
   .services-intro h2,.directory-heading h2{font-size:clamp(34px,10.5vw,46px)}
+  .person-card-heading{gap:15px;padding:24px 20px}
+  .person-icon{width:50px;height:50px;flex-basis:50px;border-radius:15px}
+  .person-contact-list{padding:8px 14px 14px}
+  .person-contact-list>a{grid-template-columns:40px minmax(0,1fr);gap:11px;padding:15px 6px;font-size:14px}
 }
 /* Carrusel morfológico de las cinco soluciones */
 @media(min-width:1101px){

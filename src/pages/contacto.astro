@@ -6,15 +6,29 @@ import Icon from '../components/Icon';
 <InteriorLayout title="Contacto | AccessOne Guatemala" description="Conversemos sobre la operación, tecnología y mantenimiento de tu parqueo en Guatemala.">
   <section class="page-hero contact-hero"><p class="tag">Contacto</p><h1>Tu siguiente proyecto empieza aquí.</h1><p>Conversemos sobre cómo mejorar la operación y experiencia de tu parqueo en Guatemala.</p></section>
   <section class="contact-directory" aria-labelledby="contact-directory-title">
-    <div class="directory-heading"><p class="tag">AccessOne Guatemala</p><h2 id="contact-directory-title">Estamos para apoyarte.</h2><p>Contacta a nuestro representante para conversar sobre tu proyecto.</p></div>
-    <div class="directory-grid">
-      <article><span aria-hidden="true"><Icon name="support" className="contact-icon" /></span><p>Representante</p><strong>Caín Roberto Castañeda Galicia</strong><small>AccessOne Guatemala</small></article>
-      <article><span aria-hidden="true"><Icon name="mail" className="contact-icon" /></span><p>Correo electrónico</p><a href="mailto:ccastaneda@accessone.com.mx">ccastaneda@accessone.com.mx</a></article>
-      <article><span aria-hidden="true"><Icon name="phone" className="contact-icon" /></span><p>Teléfono</p><a href="tel:+524433333330;ext=164">+52 443 333 3330 Ext. 164</a></article>
-      <article><span aria-hidden="true"><Icon name="phone" className="contact-icon" /></span><p>Celular</p><a href="tel:+523312690117">+52 331 269 0117</a></article>
-      <article><span aria-hidden="true"><Icon name="support" className="contact-icon" /></span><p>Representante</p><strong>Patricia Ramos</strong><small>AccessOne Guatemala</small></article>
-      <article><span aria-hidden="true"><Icon name="mail" className="contact-icon" /></span><p>Correo electrónico</p><a href="mailto:pramos@accessone.com.gt">pramos@accessone.com.gt</a></article>
-      <article><span aria-hidden="true"><Icon name="phone" className="contact-icon" /></span><p>Teléfono</p><a href="tel:+50230074335">+502 3007 4335</a></article>
+    <div class="directory-heading"><p class="tag">AccessOne Guatemala</p><h2 id="contact-directory-title">Estamos para apoyarte.</h2><p>Elige el contacto que prefieras para conversar sobre tu proyecto.</p></div>
+    <div class="contact-people">
+      <article class="person-card">
+        <div class="person-card-heading">
+          <span class="person-icon" aria-hidden="true"><Icon name="support" className="contact-icon" /></span>
+          <div><p>Representante</p><h3>Caín Roberto Castañeda Galicia</h3><small>AccessOne Guatemala</small></div>
+        </div>
+        <div class="person-contact-list">
+          <a href="mailto:ccastaneda@accessone.com.mx"><span aria-hidden="true"><Icon name="mail" className="contact-icon" /></span><span><small>Correo electrónico</small>ccastaneda@accessone.com.mx</span></a>
+          <a href="tel:+524433333330;ext=164"><span aria-hidden="true"><Icon name="phone" className="contact-icon" /></span><span><small>Teléfono</small>+52 443 333 3330 Ext. 164</span></a>
+          <a href="tel:+523312690117"><span aria-hidden="true"><Icon name="phone" className="contact-icon" /></span><span><small>Celular</small>+52 331 269 0117</span></a>
+        </div>
+      </article>
+      <article class="person-card">
+        <div class="person-card-heading">
+          <span class="person-icon" aria-hidden="true"><Icon name="support" className="contact-icon" /></span>
+          <div><p>Representante</p><h3>Patricia Ramos</h3><small>AccessOne Guatemala</small></div>
+        </div>
+        <div class="person-contact-list">
+          <a href="mailto:pramos@accessone.com.gt"><span aria-hidden="true"><Icon name="mail" className="contact-icon" /></span><span><small>Correo electrónico</small>pramos@accessone.com.gt</span></a>
+          <a href="tel:+50230074335"><span aria-hidden="true"><Icon name="phone" className="contact-icon" /></span><span><small>Teléfono</small>+502 3007 4335</span></a>
+        </div>
+      </article>
     </div>
   </section>
   <section class="contact-form-section"><ContactForm client:idle /></section>
